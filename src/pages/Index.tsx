@@ -1,13 +1,45 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState, useEffect, useRef } from "react";
+import CandleBlow from "@/components/CandleBlow";
+import BirthdayContent from "@/components/BirthdayContent";
+import Confetti from "@/components/Confetti";
 
 const Index = () => {
+  const [showContent, setShowContent] = useState(false);
+  const [showConfetti, setShowConfetti] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  useEffect(() => {
+    // Prepare audio (you can replace this URL with actual birthday music)
+    audioRef.current = new Audio("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3");
+    audioRef.current.loop = true;
+    audioRef.current.volume = 0.3;
+  }, []);
+
+  const handleBlowComplete = () => {
+    setShowContent(true);
+    setShowConfetti(true);
+    
+    // Play music
+    if (audioRef.current) {
+      audioRef.current.play().catch(err => console.log("Audio play failed:", err));
+    }
+
+    // Hide confetti after some time
+    setTimeout(() => {
+      setShowConfetti(false);
+    }, 8000);
+  };
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <>
+      {!showContent && <CandleBlow onBlowComplete={handleBlowComplete} />}
+      {showContent && (
+        <>
+          {showConfetti && <Confetti />}
+          <BirthdayContent />
+        </>
+      )}
+    </>
   );
 };
 

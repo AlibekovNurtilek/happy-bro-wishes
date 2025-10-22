@@ -10,7 +10,7 @@ const Index = () => {
 
   useEffect(() => {
     // Prepare audio (you can replace this URL with actual birthday music)
-    audioRef.current = new Audio("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3");
+    audioRef.current = new Audio("happy-birthday-to-you-piano-version-13976.mp3");
     audioRef.current.loop = true;
     audioRef.current.volume = 0.3;
   }, []);

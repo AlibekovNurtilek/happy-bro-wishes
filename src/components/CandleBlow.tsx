@@ -68,7 +68,7 @@ const CandleBlow = ({ onBlowComplete }: CandleBlowProps) => {
             onClick={handleBlow}
             className="animate-scale-in text-xl px-12 py-8 h-auto"
           >
-            🎂 Начать
+            🎂 Баштоо
           </Button>
         )}
 

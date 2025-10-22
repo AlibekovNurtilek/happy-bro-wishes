@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { Card } from "@/components/ui/card";
-import photo1 from "@/assets/photo1.jpg";
-import photo2 from "@/assets/photo2.jpg";
-import photo3 from "@/assets/photo3.jpg";
+import photo1 from "@/assets/1.jpg";
+import photo2 from "@/assets/2.jpg";
+import photo3 from "@/assets/3.jpg";
 
 const BirthdayContent = () => {
   const [showContent, setShowContent] = useState(false);
@@ -27,10 +27,10 @@ const BirthdayContent = () => {
           }`}
         >
           <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent animate-fade-in-up">
-            🎉 С Днем Рождения! 🎉
+            Туулган күнүңүз менен агатайым!
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground animate-fade-in">
-            Туулган күнүң менен!
+          <p className="text-xl md:text-2xl text-foreground/90 animate-fade-in-up" style={{ animationDelay: "200ms" }}>
+            Бул өзгөчө күнү сизге чын жүрөктөн бактылуулук, ден соолук жана ийгилик каалайм!
           </p>
         </div>
 
@@ -87,7 +87,7 @@ const BirthdayContent = () => {
           }`}
         >
           <p className="text-lg">
-            С любовью от твоей семьи 💖
+            Сүйүү менен Аселядан 💖
           </p>
         </div>
       </div>

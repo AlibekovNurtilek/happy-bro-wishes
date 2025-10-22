@@ -74,7 +74,6 @@ const CandleBlow = ({ onBlowComplete }: CandleBlowProps) => {
 
         {isBlowing && (
           <p className="text-2xl font-semibold text-primary animate-fade-in">
-            ✨ Загадайте желание...
           </p>
         )}
       </div>
